@@ -9,23 +9,15 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-int max = 0;
-int min = 0;
-
-Console.Write("Введите первое число: ");
-int firstNumber = Convert.ToInt32(Console.ReadLine());
-
-Console.Write("Введите второе число: ");
-int secondNumber = Convert.ToInt32(Console.ReadLine());
-
-if(firstNumber > secondNumber)
+Console.WriteLine("Введите число "); //ввод текста
+int number1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число "); //ввод текста
+int number2 = Convert.ToInt32(Console.ReadLine());
+if (number1 > number2)
 {
-    max = firstNumber;
-    min = secondNumber;
+    Console.WriteLine($"число {number1} больше числа {number2}");
 }
 else
 {
-    max = secondNumber;
-    min = firstNumber;
+    Console.WriteLine($"число {number2} больше числа {number1}");
 }
-Console.WriteLine("max = " + max + " и " + "min = " + min);
