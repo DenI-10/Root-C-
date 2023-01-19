@@ -1,6 +1,6 @@
 ﻿//  Напишите программу, 
 //  1.которая на вход принимает число и выдаёт, 
-//  2.является ли число чётным (делится ли оно на два без остатка).
+//  2.являеться ли число чётные (делится ли оно на два без остатка).
 // 3. напиши вывод
 
 // 4 -> да
@@ -9,14 +9,11 @@
 
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-
-int remDiv = number % 2;
-
-if(remDiv == 0)
+if (number % 2 == 1)
 {
-    Console.WriteLine("Да");
+    Console.WriteLine("Число четные");
 }
 else
 {
-    Console.WriteLine("Нет");
+    Console.WriteLine("Число четное ");
 }
