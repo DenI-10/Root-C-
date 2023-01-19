@@ -6,16 +6,12 @@
 //  5 -> 2, 4
 // 8 -> 2, 4, 6, 8
 
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-int evenNumber = 2;
-
-if(number > 1)
+Console.WriteLine("Введите число");
+int num = Convert.ToInt32(Console.ReadLine());
+for (int i = 1; i <= num; i++)
 {
-    while(evenNumber <= number)
+    if (i % 2 == 0)
     {
-        Console.Write(evenNumber + " ");
-        evenNumber = evenNumber + 2;
+        Console.Write(i + " ");
     }
 }
