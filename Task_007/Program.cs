@@ -7,7 +7,7 @@
 // 782 -> 2
 // 918 -> 8
 
-Console.WriteLine("Введите трехначное целое число "); //ввод текста
+Console.WriteLine("Введите трехзначное целое число "); //ввод текста
 int number = Convert.ToInt32(Console.ReadLine());
 int res = number % 10;
-Console.WriteLine($"Последняя цифра {res}");
+Console.WriteLine($"Последнию цифра {res}");
