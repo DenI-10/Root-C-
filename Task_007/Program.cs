@@ -7,9 +7,7 @@
 // 782 -> 2
 // 918 -> 8
 
-Console.Clear();
-Console.WriteLine("Задача 10 ");
-Console.Write("Введи трёхзначное число: ");
-int threeDigitNumber = Convert.ToInt32(Console.ReadLine());
-string stringNumber = Convert.ToString(threeDigitNumber);
-Console.WriteLine("вторая цифра этого числа -> "+stringNumber[1]);
+Console.WriteLine("Введите трехначное целое число "); //ввод текста
+int number = Convert.ToInt32(Console.ReadLine());
+int res = number % 10;
+Console.WriteLine($"Последняя цифра {res}");
