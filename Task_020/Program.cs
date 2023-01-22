@@ -1,18 +1,18 @@
 ﻿// Напишите программу, которая
-// 1.принимает на вход координаты двух точек и
+// 1.принимает на вход координат двух точек и
 // 2.находит расстояние между ними в 2D
 // пространстве.
 // A (3,6); B (2,1) -> 5,09
 // A (7,-5); B (1,-1) -> 7,21
 // напиши вывод
 
-Console.WriteLine("Введите координаты точки Ax ");
+Console.WriteLine("Введите координат точек Ax ");
 int x1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координаты точки Ay ");
+Console.WriteLine("Введите координат точек Ay ");
 int y1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координаты точки Bx ");
+Console.WriteLine("Введите координат точек Bx ");
 int x2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координаты точки By ");
+Console.WriteLine("Введите координат точек By ");
 int y2 = Convert.ToInt32(Console.ReadLine());
 
 double Distance(int xa, int ya, int xb, int yb)
