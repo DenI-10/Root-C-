@@ -10,7 +10,7 @@ int Factorial(int num)
     int productnum = 1;
     for (int i = 1; i <= num; i++)
     {
-        checked   //проверка ошибки
+        checked   //проверяет ошибки
         {
             productnum = productnum * i;
         }
@@ -26,7 +26,7 @@ int Factorial(int num)
         if (number > 0)
             Console.WriteLine($"Факториал числа {number} = {Factorial(number)}");
         else
-            Console.WriteLine("Введено некорректное значение. Введите натуральное число.");
+            Console.WriteLine("Введено корректные значение. Введите натуральное число.");
     }
     else
-        Console.WriteLine("Введено некорректное значение. Введите целое число");
+        Console.WriteLine("Введено корректные значение. Введите целое число");
