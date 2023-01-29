@@ -6,16 +6,19 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-int number = ReadInt("Введите число: ");
+Console.Write("Введите натуральное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
 
-for (int i = 1; i <= number; i++)
-{
-    Console.Write($"{i * i * i}, ");
-}
 
-// Метод
-int ReadInt(string message)
+void SquareTable(int number)
 {
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
+
+    int count = 1;
+
+     while (count <= number)
+    {
+        Console.WriteLine($"|{count} | {Math.Pow(count, 3)}|");
+        count++;
+    }
 }
+SquareTable(number);
