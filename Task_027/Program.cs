@@ -11,7 +11,6 @@ int number = ReadInt("Введите число: ");
 int len = NumberLen(number);
 SumNumbers(number, len);
 
-// Функция подсчета цифр в числе
 int NumberLen(int a)
 {
     int index = 0;
@@ -23,7 +22,6 @@ int NumberLen(int a)
     return index;
 }
 
-// Функция вывода суммы цифр в числе
 void SumNumbers(int n, int len)
 {
     int sum = 0;
@@ -35,7 +33,6 @@ void SumNumbers(int n, int len)
     Console.WriteLine($"сумма цифр {sum}");
 }
 
-// Функция ввода
 int ReadInt(string message)
 {
     Console.Write(message);
