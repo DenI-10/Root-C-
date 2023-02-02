@@ -4,35 +4,42 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-int size = 5;
-int[] array = new int [size];
-int temp = 0;
-FillArrayRandomNumbers(array, 0, 100);
-WriteArray(array);
-
-for(int i = 0; i < array.Length; i++)
+int SumOddPositions(int[] massive)
 {
-    if(i % 2 != 0)
+    int result = 0;
+    for (int i = 0; i < massive.Length; i++)
     {
-        temp += array[i];
+        if (i % 2 != 0)
+        {
+            result += massive[i];
+        }
     }
-    else continue;
-}
-Console.WriteLine($"Sum odd count: {temp}");
-
-void FillArrayRandomNumbers(int[] array, int min, int max)
-{
-    for(int i = 0; i < array.Length; i++)
-    {
-        array[i] = new Random().Next(min, max);
-    }
+    return result;
 }
 
-void WriteArray(int[] array)
+int[] CreateArrayRndInt(int size, int min, int max)
 {
-    for(int i = 0; i < array.Length; i++)
+    int[] array = new int[size];
+    Random rnd = new Random();
+    for (int i = 0; i < size; i++)
     {
-        Console.Write(array[i] + " ");
+        array[i] = rnd.Next(min, max + 1);
     }
-    Console.WriteLine();
+    return array;
 }
+
+void PrintArray(int[] massive)
+{
+    Console.Write("[");
+    for (int i = 0; i < massive.Length; i++)
+    {
+        if (i < massive.Length - 1) Console.Write($"{massive[i]}, ");
+        else Console.Write($"{massive[i]}");
+    }
+    Console.Write("]");
+}
+
+int[] mass = CreateArrayRndInt(5, 0, 999);
+int sumOddPositions = SumOddPositions(mass);
+PrintArray(mass);
+Console.WriteLine($" -> {sumOddPositions}");
