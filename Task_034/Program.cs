@@ -3,35 +3,41 @@
 
 // [345, 897, 568, 234] -> 2
 
-int size = 5;
-int[] array = new int [size];
-int count = 0;
-FillArrayRandomNumbers(array, 99, 1000);
-WriteArray(array);
-
-for(int i = 0; i < array.Length; i++)
+int QuantityEvenNumbers(int[] massive)
 {
-    if(array[i] %2 == 0)
+    int result = 0;
+    for (int i = 0; i < massive.Length; i++)
     {
-        count++;
-    }
-    else continue;
-}
-Console.WriteLine($"Колличество четных чисел: {count}");
+         if (massive[i] % 2 == 0)
 
-void FillArrayRandomNumbers(int[] array, int min, int max)
-{
-    for(int i = 0; i < array.Length; i++)
-    {
-        array[i] = new Random().Next(min, max);
+            result++;
     }
+    return result;
 }
 
-void WriteArray(int[] array)
+int[] CreateArrayRndInt(int size, int min, int max)
 {
-    for(int i = 0; i < array.Length; i++)
+    int[] array = new int[size];
+    Random rnd = new Random();
+    for (int i = 0; i < size; i++)
     {
-        Console.Write(array[i] + " ");
+        array[i] = rnd.Next(min, max + 1);
     }
-    Console.WriteLine();
+    return array;
 }
+
+void PrintArray(int[] massive)
+{
+    Console.Write("[");
+    for (int i = 0; i < massive.Length; i++)
+    {
+        if (i < massive.Length - 1) Console.Write($"{massive[i]}, ");
+        else Console.Write($"{massive[i]}");
+    }
+    Console.Write("]");
+}
+
+int[] mass = CreateArrayRndInt(4, 100, 999);
+int quantityEvenNumbers = QuantityEvenNumbers(mass);
+PrintArray(mass);
+Console.WriteLine($" ->  Четных чисел {quantityEvenNumbers}");
