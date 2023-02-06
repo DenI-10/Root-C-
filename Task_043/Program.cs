@@ -3,23 +3,34 @@
 // y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-Console.WriteLine($"Введите значение b1 : ");
-double b1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Введите значение k1 : ");
-double k1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Введите значение b2 : ");
-double b2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Введите значение k2 : ");
-double k2 = Convert.ToInt32(Console.ReadLine());
-
-double x = 0;
-double y = 0;
-
-if (b1 == b2) Console.WriteLine($"b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> (0, {b1})");
-else if (k1 == k2) Console.WriteLine($"Не пересекаются");
-else 
+double IntersectionPointX(double b1, double k1, double b2, double k2)
 {
-    x = (b2 - b1) / (k1 - k2);
-    y = k1 * x + b1;
-    Console.WriteLine($"b1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> ({x}, {y})");
+    return (b2 - b1) / (k1 - k2);
 }
+double IntersectionPointY(double b1, double k1, double b2, double k2)
+{
+    return k1 * (b2 - b1) / (k1 - k2) + b1;
+}
+
+Console.WriteLine("Введите координаты линий:");
+Console.Write("Введите координаты точки b1: ");
+double cb1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите координаты точки k1: ");
+double ck1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите координаты точки b2: ");
+double cb2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите координаты точки k2: ");
+double ck2 = Convert.ToInt32(Console.ReadLine());
+if (ck1 == ck2 && cb1 == cb2)
+{
+Console.WriteLine("Прямые совпадают.");
+return;
+}
+if (ck1 == ck2) 
+{
+Console.WriteLine("Прямые являются параллельными.");
+return;
+}
+double x = IntersectionPointX(cb1, ck1, cb2, ck2);
+double y = IntersectionPointY(cb1, ck1, cb2, ck2);
+Console.WriteLine($"b1 = {cb1}, k1 = {ck1}, b2 = {cb2}, k2 = {ck2} -> ({x};{y})");
